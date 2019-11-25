@@ -14,7 +14,7 @@ app.use(bodyParser.json({ type: 'application/json'}));
 app.post("/notify",function(req,res){
 
   var results = req.body.status;
-  var user_id = req.body.custom_str1;
+  var user_id = req.body.m_payment_id;
 
   var baseUrl = "https://creator.zoho.com/api/dupletech/json/creating-millionaires/form/Subscriptions/record/add";
   var options = {
