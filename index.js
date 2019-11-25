@@ -14,7 +14,7 @@ app.use(bodyParser.json({ type: 'application/json'}));
 app.post("/notify",function(req,res){
 
   var results = req.body.status;
-  var user_id = req.body.user_id;
+  var user_id = req.body.custom_str1;
 
   var baseUrl = "https://creator.zoho.com/api/dupletech/json/creating-millionaires/form/Subscriptions/record/add";
   var options = {
@@ -23,7 +23,7 @@ app.post("/notify",function(req,res){
     qs:{
       authtoken:"faafd2c544bc60e3932dc3fcc58b43af",
       scope:"creatorapi",
-      test:results,
+      test:user_id,
     }
   };
 
@@ -59,6 +59,6 @@ app.post("/notify",function(req,res){
 
 
 //Local Testing only
-app.listen(3000,function(){
-  console.log("Server is running on port 3000");
+app.listen(6000,function(){
+  console.log("Server is running on port 6000");
 });
